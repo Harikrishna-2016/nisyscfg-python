@@ -1,2 +1,13 @@
 [tool.black]
 line-length = 100
+
+[tool.poetry.dependencies]
+hightime = { version = ">=1.0.0" }
+
+[tool.poetry.group.dev.dependencies]
+six = "1.17.0"
+
+[solver]
+# Set min-release-age to 2 weeks, same as in https://github.com/ni/python-renovate-config
+min-release-age = 14
+min-release-age-exclude = ["hightime"]
