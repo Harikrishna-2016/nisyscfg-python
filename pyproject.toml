@@ -8,6 +8,7 @@ license = "MIT"
 authors = [{ name = "National Instruments" }]
 maintainers = [{ name = "Tyler Krehbiel", email = "tyler.krehbiel@emerson.com" }]
 keywords = ["nisyscfg", "syscfg"]
+dynamic = ["dependencies"]
 classifiers = [
 	"Development Status :: 1 - Planning",
 	"Intended Audience :: Developers",
@@ -24,7 +25,6 @@ classifiers = [
 	"Programming Language :: Python :: 3.13",
 	"Topic :: System :: Hardware :: Hardware Drivers",
 ]
-dynamic = ["dependencies"]
 [project.urls]
 repository = "https://github.com/ni/nisyscfg-python"
 changelog = "https://github.com/ni/nisyscfg-python/blob/main/CHANGELOG.md"
@@ -38,10 +38,8 @@ requires-poetry = '>=2.1,<3.0'
 packages = [{ include = "nisyscfg", from = "src" }]
 
 [tool.poetry.dependencies]
-hightime = { version = ">=1.0.0" }
-six = "1.17.0"
-#[tool.poetry.group.dev.dependencies]
-
+hightime = ">=0.2.2"
+six = ">=1.16.0"
 
 [tool.poetry.group.test.dependencies]
 pytest = ">=7.2"
