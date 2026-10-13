@@ -24,7 +24,7 @@ classifiers = [
 	"Programming Language :: Python :: 3.13",
 	"Topic :: System :: Hardware :: Hardware Drivers",
 ]
-dependencies = ["hightime", "six"]
+dynamic = ["dependencies"]
 [project.urls]
 repository = "https://github.com/ni/nisyscfg-python"
 changelog = "https://github.com/ni/nisyscfg-python/blob/main/CHANGELOG.md"
