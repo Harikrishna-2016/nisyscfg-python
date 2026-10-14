@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: read
-  security-events: write
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -21,4 +20,4 @@ jobs:
     permissions:
       contents: read
       checks: write 
-      pull-requests: write 
+      pull-requests: write

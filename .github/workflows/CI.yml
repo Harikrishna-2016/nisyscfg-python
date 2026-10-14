@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: read ## TODO: remove this when moving the repo to public
-  security-events: write
 
 jobs:
   check_workflows:
