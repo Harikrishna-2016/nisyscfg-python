@@ -56,6 +56,9 @@ jobs:
           if [ "${install_extras}" == "null" ]; then
             install_extras=""
           fi
+          if [ "$package_basepath" == "." ]; then
+            package_basepath=""
+          fi
 
           echo "package-basepath=${package_basepath}" >> $GITHUB_OUTPUT
           echo "install-extras=${install_extras}" >> $GITHUB_OUTPUT
