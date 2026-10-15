@@ -59,8 +59,8 @@ jobs:
         uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ${{ github.workspace }}/${{ needs.get_package_info.outputs.package-basepath }}/.venv
-          #key: ${{ inputs.package-name }}-${{ matrix.os }}-py${{ steps.setup-python.outputs.python-version }}-${{ hashFiles(format('{0}/{1}/poetry.lock', github.workspace, needs.get_package_info.outputs.package-basepath)) }}
-          key: ${{ inputs.package-name }}-${{ matrix.os }}-py${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          key: ${{ inputs.package-name }}-${{ matrix.os }}-py${{ steps.setup-python.outputs.python-version }}-${{ hashFiles(format('{0}/{1}/poetry.lock', github.workspace, needs.get_package_info.outputs.package-basepath)) }}
+        
       - name: Install ${{ inputs.package-name }}
         run: poetry install -v
         working-directory: ${{ github.workspace }}/${{ needs.get_package_info.outputs.package-basepath }}
@@ -77,6 +77,5 @@ jobs:
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: test_results_unit_${{ inputs.package-name }}_${{ matrix.os }}_py${{ steps.setup-python.outputs.python-version }}
-          #path: ${{ github.workspace }}/${{ needs.get_package_info.outputs.package-basepath }}/test_results/*.xml
-          path: ${{ github.workspace }}/test_results/*.xml
+          path: ${{ github.workspace }}/${{ needs.get_package_info.outputs.package-basepath }}/test_results/*.xml
         if: always()
