@@ -23,4 +23,4 @@ jobs:
           advanced-security: false # TODO: use the default when we publish the repo
           inputs: |
             .github/workflows
-            ! .github/workflows/publish-to-pypi.yml
+            
