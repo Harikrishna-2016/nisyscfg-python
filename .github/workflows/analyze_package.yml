@@ -54,6 +54,6 @@ jobs:
       #     project-directory: ${{ inputs.package-basepath || '.' }}
       #     install-args: ${{ inputs.install-extras && format('--extras ''{0}''', inputs.install-extras) || '' }}  
       - name: Bandit security checks
-        working-directory: ${{ inputs.package-basepath }}
+        working-directory: ${{ github.workspace }}
         run:  poetry run bandit -c pyproject.toml -r src/
         
