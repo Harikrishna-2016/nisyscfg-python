@@ -54,6 +54,11 @@ bandit = { version = ">=1.7,<1.9.4", extras = ["toml"] }
 addopts = "--cov=nisyscfg --cov-report=term --cov-report=xml --cov-report=html -svv --strict-markers"
 testpaths = ["tests"]
 
+[tool.bandit]
+skips = [
+  "B101", # assert_used
+]
+
 [tool.flake8]
 show_source = true
 max_line_length = 120
