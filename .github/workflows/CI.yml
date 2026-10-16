@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read ## TODO: remove this when moving the repo to public
+  contents: read
 
 jobs:
   check_workflows:
