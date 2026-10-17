@@ -7,9 +7,8 @@ on:
   workflow_call:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
+permissions: {}
+  
 jobs:
   check_workflows:
     name: Check workflows
@@ -41,6 +40,6 @@ jobs:
     needs: test_packages
     uses: ./.github/workflows/report_test_results.yml
     permissions:
-      checks: write # needed to push the aggregated report
       pull-requests: write # needed to post the report to the PR
       contents: read # needed only if the repo is internal, remove this if public
+      

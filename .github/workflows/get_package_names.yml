@@ -13,8 +13,6 @@ jobs:
   get_package_names:
     name: Get package names
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     outputs:
       package-names: ${{ steps.parse_json.outputs.package-names }}
     steps:
