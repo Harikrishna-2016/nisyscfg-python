@@ -35,8 +35,6 @@ jobs:
     name: Run unit tests - ${{ inputs.package-name }} (${{ matrix.python-version }} - ${{ matrix.os }})
     needs: get_package_info
     runs-on: ${{ matrix.os }}
-    permissions:
-      contents: read
     steps:
       - name: Check out repo
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -78,5 +76,6 @@ jobs:
           path: ${{ github.workspace }}/${{ needs.get_package_info.outputs.package-basepath }}/test_results/*.xml
         if: always()
         
+
 
 
