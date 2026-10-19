@@ -1,7 +1,9 @@
 name: Test Building Python Package
 
-on: [push, pull_request]
-
+on:
+  workflow_call:
+  workflow_dispatch:
+   
 permissions: {}
 
 jobs:

@@ -34,6 +34,12 @@ jobs:
     uses: ./.github/workflows/test_package.yml
     with:
       package-name: ${{ matrix.package-name }}
+
+  test_wheel_build:
+    name: Test wheel build
+    needs: check_packages
+    uses: ./.github/workflows/test_wheel_build.yml
+    
   report_test_results:
     name: Report test results
     if: ${{ always() }}
