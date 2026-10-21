@@ -54,9 +54,15 @@ jobs:
           if [ "${install_extras}" == "null" ]; then
             install_extras=""
           fi
-          echo "package-basepath=${package_basepath}" >> $GITHUB_OUTPUT
-          echo "install-extras=${install_extras}" >> $GITHUB_OUTPUT
-          echo "should-check-docs=${should_check_docs}" >> $GITHUB_OUTPUT
+          # Repo root ("." or "./") -> empty, so workspace/<basepath>/test_results has no "./" segment
+           output_basepath="${package_basepath#./}"
+           output_basepath="${output_basepath%/}"
+           if [ "$output_basepath" = "." ]; then
+             output_basepath=""
+          fi
+       echo "package-basepath=${output_basepath}" >> $GITHUB_OUTPUT
+       echo "install-extras=${install_extras}" >> $GITHUB_OUTPUT
+       echo "should-check-docs=${should_check_docs}" >> $GITHUB_OUTPUT
       - name: Show package info
         env:
           STEP_OUTPUTS: ${{ toJSON(steps.parse_json.outputs) }}
