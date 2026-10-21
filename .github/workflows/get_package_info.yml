@@ -54,7 +54,7 @@ jobs:
           if [ "${install_extras}" == "null" ]; then
             install_extras=""
           fi
-          # Repo root ("." or "./") -> empty, so workspace/<basepath>/test_results has no "./" segment
+          # Repo root ("." or "./") -> empty, so workspace/<package_basepath>/test_results has no "./" segment
            package_basepath="${package_basepath#./}"
            package_basepath="${package_basepath%/}"
            if [ "$package_basepath" = "." ]; then
