@@ -55,12 +55,12 @@ jobs:
             install_extras=""
           fi
           # Repo root ("." or "./") -> empty, so workspace/<basepath>/test_results has no "./" segment
-           output_basepath="${package_basepath#./}"
-           output_basepath="${output_basepath%/}"
-           if [ "$output_basepath" = "." ]; then
-             output_basepath=""
+           package_basepath="${package_basepath#./}"
+           package_basepath="${package_basepath%/}"
+           if [ "$package_basepath" = "." ]; then
+             package_basepath=""
           fi
-          echo "package-basepath=${output_basepath}" >> $GITHUB_OUTPUT
+          echo "package-basepath=${package_basepath}" >> $GITHUB_OUTPUT
           echo "install-extras=${install_extras}" >> $GITHUB_OUTPUT
           echo "should-check-docs=${should_check_docs}" >> $GITHUB_OUTPUT
       - name: Show package info
