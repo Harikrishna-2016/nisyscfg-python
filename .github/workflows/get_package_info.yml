@@ -60,9 +60,9 @@ jobs:
            if [ "$output_basepath" = "." ]; then
              output_basepath=""
           fi
-       echo "package-basepath=${output_basepath}" >> $GITHUB_OUTPUT
-       echo "install-extras=${install_extras}" >> $GITHUB_OUTPUT
-       echo "should-check-docs=${should_check_docs}" >> $GITHUB_OUTPUT
+          echo "package-basepath=${output_basepath}" >> $GITHUB_OUTPUT
+          echo "install-extras=${install_extras}" >> $GITHUB_OUTPUT
+          echo "should-check-docs=${should_check_docs}" >> $GITHUB_OUTPUT
       - name: Show package info
         env:
           STEP_OUTPUTS: ${{ toJSON(steps.parse_json.outputs) }}
