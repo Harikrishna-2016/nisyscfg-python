@@ -1,5 +1,5 @@
 {
     "nisyscfg": {
-        "package-basepath": ""
+        "package-basepath": "."
     }
 }
