@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: test_results_unit_${{ inputs.package-name }}_${{ matrix.os }}_py${{ steps.setup-python.outputs.python-version }}
-          path: ${{ github.workspace }}${{ needs.get_package_info.outputs.package-basepath == '.' && '' || format('/{0}', needs.get_package_info.outputs.package-basepath) }}/test_results/*.xml
+          path: ${{ github.workspace }}/${{ needs.get_package_info.outputs.package-basepath == '.' && 'test_results/*.xml' || format('{0}/test_results/*.xml', needs.get_package_info.outputs.package-basepath) }}
         if: always()
 
 
