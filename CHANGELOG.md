@@ -7,8 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Unreleased
 - Added
-  - Added support for Python 3.15.
+  - Added support for Python 3.14, Python 3.14 free-threaded (3.14t), and Python 3.15.
 - Changed
 - Removed
-  - Removed support for Python 3.9.
-  - Removed support for Python 3.10.
+  - Removed support for Python 3.9 and Python 3.10.
