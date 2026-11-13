@@ -3,21 +3,19 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - main  
   workflow_call:
   workflow_dispatch:
 
 permissions: {}
-
+  
 jobs:
   check_workflows:
     name: Check workflows
     uses: ./.github/workflows/check_workflows.yml
-
   get_package_names:
     name: Get package names
     uses: ./.github/workflows/get_package_names.yml
-
   check_packages:
     name: Check ${{ matrix.package-name }}
     needs: get_package_names
@@ -27,7 +25,6 @@ jobs:
     uses: ./.github/workflows/check_package.yml
     with:
       package-name: ${{ matrix.package-name }}
-
   test_packages:
     name: Test ${{ matrix.package-name }}
     needs: get_package_names
@@ -42,9 +39,7 @@ jobs:
     name: Test wheel build
     needs: check_packages
     uses: ./.github/workflows/test_wheel_build.yml
-
-  # Saves the triggering event so the workflow_run reporter can attribute
-  # results to the right PR/commit. No write permissions needed.
+    
   upload_event_file:
     name: Upload event file
     runs-on: ubuntu-latest
